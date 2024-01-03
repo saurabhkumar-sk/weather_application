@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:weather_application/model/weather_models.dart';
+import 'package:weather_application/repo.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -9,6 +10,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  TextEditingController textEditingController = TextEditingController();
+  WeatherModel? _weather;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,37 +25,15 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          const TextField(),
-          const SizedBox(
-            height: 20,
-          ),
-          ElevatedButton.icon(
-            onPressed: () {},
-            icon: const Icon(Icons.search),
-            label: const Text("Search"),
-          ),
-          const Text(
-            "Min wheather: ",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const Text(
-            "Max wheather: ",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const Text(
-            "Wheather: ",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
-      ),
+      body: FutureBuilder(
+          future: getWeather(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return Text("data");
+            } else {
+              return CircularProgressIndicator();
+            }
+          }),
     );
   }
 }
