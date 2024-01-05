@@ -11,6 +11,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   TextEditingController textEditingController = TextEditingController();
+  // ignore: unused_field
   WeatherModel? _weather;
 
   @override
@@ -28,10 +29,12 @@ class _HomeScreenState extends State<HomeScreen> {
       body: FutureBuilder(
           future: getWeather(),
           builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return Text("data");
+            if (!snapshot.hasData) {
+              return Text(
+                _weather?.description ?? "saurabh ",
+              );
             } else {
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             }
           }),
     );
