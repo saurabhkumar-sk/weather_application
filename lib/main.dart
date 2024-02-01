@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:weather_application/screens/home_screen.dart';
 import 'package:weather_application/screens/splash_screen.dart';
 
 void main() {
@@ -20,6 +19,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Wheather application',
       theme: ThemeData(
+        fontFamily: "Poppins",
         appBarTheme: const AppBarTheme(color: Colors.blue),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,

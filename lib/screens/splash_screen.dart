@@ -12,7 +12,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 2)).then(
-      (value) => Navigator.push(
+      (value) => Navigator.pushReplacement(
         context,
         MaterialPageRoute(
           builder: (context) => const HomeScreen(),
@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
           child: Image.asset(
         "assets/images/red__sun-removebg-preview.png",
-        color: const Color.fromARGB(255, 91, 181, 254),
+        color: Colors.yellow,
       )),
     );
   }
