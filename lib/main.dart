@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_application/screens/home_screen.dart';
+import 'package:weather_application/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +24,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const ApiScreens(),
+      home: const SplashScreen(),
     );
   }
 }

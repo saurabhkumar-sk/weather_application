@@ -4,14 +4,14 @@ import 'package:weather_application/model/weather_models.dart';
 import 'package:weather_application/utils/repo.dart';
 import 'package:weather_application/utils/textstyle.dart';
 
-class ApiScreens extends StatefulWidget {
-  const ApiScreens({Key? key}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<ApiScreens> createState() => _ApiScreensState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _ApiScreensState extends State<ApiScreens> {
+class _HomeScreenState extends State<HomeScreen> {
   TextEditingController textEditingController = TextEditingController();
   WeatherModel? weatherModel;
 
