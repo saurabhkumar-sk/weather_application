@@ -6,7 +6,6 @@ import 'package:weather_application/model/weather_models.dart';
 
 class Repo {
   Future getWeather(String? city) async {
-    // city = "Udaipur";
     var weatherApiUrl =
         "https://api.openweathermap.org/data/2.5/weather?q=$city&APPID=43ea6baaad7663dc17637e22ee6f78f2";
 
